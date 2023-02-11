@@ -45,3 +45,30 @@ PrintArray(matrix); // в этом запросе для метода PrintArray
 FillArray(matrix);
 Console.WriteLine();
 PrintArray(matrix);
+//************************************************************************************************************************
+//                             Р Е К У Р С И Я 
+//    вычисление  факториала 
+Double Factorial(int n)    /// здесь можно  чтобы возращался  формат или  "- int "  или побольше   "- Double"
+{
+ // 1! = 1
+ // 0! = 1
+ if(n == 1) return 1;
+ else return n * Factorial(n-1);
+}
+Console.WriteLine($"факториал {Factorial(3)}");   // 1 * 2 * 3 = 6  // факториал от 3
+//    вычисление  ФИБОНАЧИ    --- каждое следующее число равно сумме двух предыдущих
+// f(1) = 1
+// f(2) = 1
+// f(n) = f(n-1) + f(n-2)
+
+Double  Fibonacci(int n) // подпрограмма   фибоначи //здесь можно  чтобы возращался  формат или  "- int "  или побольше   "- Double"
+{
+ if(n == 1 || n == 2) return 1;
+ else return Fibonacci(n-1) + Fibonacci(n-2);
+}
+
+for (int i = 1; i < 40; i++)   // задаем  поиск на перве  40 чисел в ряде фибоначи
+{
+ //Console.WriteLine(Fibonacci(i));
+  Console.WriteLine($"f({i}) = {Fibonacci(i)}");
+}
